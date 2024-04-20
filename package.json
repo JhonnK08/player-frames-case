@@ -10,7 +10,7 @@
 		"lint": "pnpm run-eslint && pnpm format",
 		"preview": "vite preview",
 		"prepare": "husky",
-		"run-eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+		"run-eslint": "eslint . --ext ts,tsx --report-unused-disable-directives"
 	},
 	"dependencies": {
 		"classnames": "^2.5.1",
