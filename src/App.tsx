@@ -1,38 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import FramePlayer from './FramePlayer';
 
 function App() {
-	const [count, setCount] = useState(0);
+	const framesTest = [
+		'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg',
+		'https://free-images.com/sm/b009/sunrise_sun_holiday_sea.jpg',
+		'https://free-images.com/sm/a0a4/summer_sea_sun_italy.jpg',
+		'https://free-images.com/md/d44b/cyclopean_isles_sicily_italy.jpg',
+		'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg'
+	];
 
 	return (
-		<>
-			<div>
-				<a href='https://vitejs.dev' target='_blank'>
-					<img src={viteLogo} className='logo' alt='Vite logo' />
-				</a>
-				<a href='https://react.dev' target='_blank'>
-					<img
-						src={reactLogo}
-						className='logo react'
-						alt='React logo'
-					/>
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className='card'>
-				<button onClick={() => setCount(count => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<div className='flex h-screen w-screen flex-col items-center justify-center gap-y-6 bg-slate-200'>
+			<h1 className='text-center text-2xl font-medium'>Frame Player</h1>
+			<FramePlayer frames={framesTest} fps={0.2} />
+		</div>
 	);
 }
 
