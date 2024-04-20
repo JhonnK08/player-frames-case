@@ -16,7 +16,6 @@ export default function useCalculateTime({
 		minutes: number;
 		seconds: number;
 	} {
-		console.log('timeInSeconds', timeInSeconds);
 		const minutes = Math.floor(timeInSeconds / 60);
 
 		const response = {
