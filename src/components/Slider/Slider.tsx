@@ -37,8 +37,7 @@ function Slider({
 		}
 
 		return () => {
-			console.log('dismounting');
-			if (!isPlaying && intervalReference.current) {
+			if (isPlaying && intervalReference.current) {
 				clearInterval(intervalReference.current);
 			}
 		};
