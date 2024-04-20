@@ -1,6 +1,6 @@
 {
-  "**/*.ts?(x)": [
-    "pnpm -F frontend eslint --ext ts,tsx",
-    "pnpm -F frontend prettier --write"
-  ]
+	"**/*.ts?(x)": [
+		"pnpm -F frontend eslint --ext ts,tsx",
+		"pnpm -F frontend prettier --write"
+	]
 }
