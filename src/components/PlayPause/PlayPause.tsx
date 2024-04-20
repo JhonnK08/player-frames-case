@@ -1,21 +1,18 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, memo } from 'react';
 import { Svg } from '../Svgs';
 
 interface PlayPauseProperties {
-	onClickPlayPause: (isPlaying: boolean) => void;
+	isPlaying: boolean;
+	onClickPlayPause: () => void;
 }
 
-function PlayPause({ onClickPlayPause }: PlayPauseProperties): ReactElement {
-	const [isPlaying, setIsPlaying] = useState(false);
-
-	function onClickButton(): void {
-		setIsPlaying(previousValue => !previousValue);
-		onClickPlayPause(!isPlaying);
-	}
-
+function PlayPauseComponent({
+	isPlaying,
+	onClickPlayPause
+}: PlayPauseProperties): ReactElement {
 	return (
 		<div className='flex items-center justify-center'>
-			<button type='button' onClick={onClickButton}>
+			<button type='button' onClick={onClickPlayPause}>
 				<Svg
 					svgName={isPlaying ? 'pause' : 'play'}
 					className='h-8 w-8 fill-gray-800 text-gray-800'
@@ -24,5 +21,7 @@ function PlayPause({ onClickPlayPause }: PlayPauseProperties): ReactElement {
 		</div>
 	);
 }
+
+const PlayPause = memo(PlayPauseComponent);
 
 export default PlayPause;

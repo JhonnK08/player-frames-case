@@ -1,47 +1,18 @@
-import { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, ReactElement } from 'react';
 
 interface SliderProperties {
-	isPlaying: boolean;
 	max: number;
 	onChangeValue: (value: number) => void;
+	value: number;
 }
 
-function Slider({
-	isPlaying,
-	max,
-	onChangeValue
-}: SliderProperties): ReactElement {
-	const [value, setValue] = useState(0);
-	const intervalReference = useRef<number | null>(null);
-
+function Slider({ max, onChangeValue, value }: SliderProperties): ReactElement {
 	function onChangeProgress(event: ChangeEvent<HTMLInputElement>): void {
-		setValue(event.target.valueAsNumber);
-		onChangeValue(event.target.valueAsNumber);
-	}
-
-	useEffect(() => {
-		console.log('isPlaying', isPlaying);
-
-		if (isPlaying) {
-			intervalReference.current = setInterval((): void => {
-				setValue(previous => {
-					if (previous + 1 !== max) {
-						onChangeProgress({
-							target: { valueAsNumber: previous + 1 }
-						} as ChangeEvent<HTMLInputElement>);
-						return previous + 1;
-					}
-					return previous;
-				});
-			}, 1000);
+		const eventValue = event.target.valueAsNumber;
+		if (eventValue <= max) {
+			onChangeValue(event.target.valueAsNumber);
 		}
-
-		return () => {
-			if (isPlaying && intervalReference.current) {
-				clearInterval(intervalReference.current);
-			}
-		};
-	}, [isPlaying]);
+	}
 
 	return (
 		<div className='flex flex-1 items-center'>
