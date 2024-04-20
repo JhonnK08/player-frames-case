@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# Frame Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto realizado utilizando React.js, Typescript, TailwindCSS, Vite.
 
-Currently, two official plugins are available:
+Componente que recebe um array de URL de frames e o FPS, e cria um player com essas imagens.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+<FramePlayer
+    frames={[
+		    'https://free-images.com/sm/a0a4/summer_sea_sun_italy.jpg',
+		    'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg',
+		    'https://free-images.com/sm/b009/sunrise_sun_holiday_sea.jpg',
+		    'https://free-images.com/md/d44b/cyclopean_isles_sicily_italy.jpg',
+		    'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg'
+	  ]}
+    fps={0.2}
+/>
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Requisitos
+
+Node.js 18
+
+## Como rodar
+
+```bash
+npm install -g pnpm # Instalar pnpm
+
+pnpm i # Instala as dependências
+
+pnpm dev # Roda projeto localmente
+
+```
