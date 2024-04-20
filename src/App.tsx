@@ -2,9 +2,9 @@ import FramePlayer from './FramePlayer';
 
 function App() {
 	const framesTest = [
+		'https://free-images.com/sm/a0a4/summer_sea_sun_italy.jpg',
 		'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg',
 		'https://free-images.com/sm/b009/sunrise_sun_holiday_sea.jpg',
-		'https://free-images.com/sm/a0a4/summer_sea_sun_italy.jpg',
 		'https://free-images.com/md/d44b/cyclopean_isles_sicily_italy.jpg',
 		'https://free-images.com/md/6356/beach_sand_sea_ocean_0.jpg'
 	];
